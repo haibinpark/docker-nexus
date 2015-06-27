@@ -2,7 +2,7 @@ FROM sonatype/nexus:oss
 
 MAINTAINER David Zhao <zhaohaibin@outlook.com>
 
-ENV REFRESHED_AT 2015-06-27 7:58
+ENV REFRESHED_AT 2015-06-27 16:45
 
 USER root
 
@@ -33,5 +33,8 @@ RUN curl --fail --silent --location --retry 3 \
     -type f -exec chmod 644 {} \; \
   && rm /tmp/nexus-p2-bridge-plugin-${NEXUS_VERSION}-bundle.zip
 
+  
+VOLUME ${SONATYPE_WORK}  
+  
 USER nexus
 
